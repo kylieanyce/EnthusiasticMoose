@@ -5,6 +5,8 @@ Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
 MooseSays("H I, I'M  E N T H U S I A S T I C !");
 MooseSays("I really am enthusiastic");
+bool isTrue = MooseAsks("Are you feeling enthusiastic today?");
+Console.WriteLine(isTrue);
 
 void MooseSays(string message)
 {
@@ -36,4 +38,24 @@ void MooseSays(string message)
                       \ \'._  ` '_.'
                        `^^` `^^^`
     ");
+}
+
+bool MooseAsks(string question)
+{
+    Console.WriteLine($"{question} (Y/N): ");
+    string answer = Console.ReadLine().ToLower();
+
+    while (answer != "y" && answer != "n")
+    {
+        Console.WriteLine($"{question} (Y/N): ");
+        answer = Console.ReadLine().ToLower();
+    }
+    if (answer == "y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
